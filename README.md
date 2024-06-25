@@ -1,1 +1,1 @@
-# Practice_Shop
+![image alt](logic_schema.png)
