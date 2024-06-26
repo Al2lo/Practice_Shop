@@ -15,7 +15,7 @@ namespace PracticeShop.DAL.Entities
         public string Email { get; set; }
         public float Balance { get; set; }
         public string Password { get; set; }
-        public string Password_Salt { get; set; }
+        public string PasswordSalt { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

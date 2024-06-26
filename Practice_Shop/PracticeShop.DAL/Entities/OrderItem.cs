@@ -10,9 +10,9 @@ namespace PracticeShop.DAL.Entities
     {
         public Guid Id { get; set; }
         public float Amount { get; set; }
-        public Guid Product_Id { get; set; }
+        public Guid ProductId { get; set; }
         public virtual Product Product { get; set; }
-        public Guid Order_Id { get; set; }
+        public Guid OrderId { get; set; }
         public virtual Order Order { get; set; }
     }
 }

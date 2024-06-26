@@ -10,7 +10,7 @@ namespace PracticeShop.DAL.Entities
     {
         public Guid Id { get; set; }
         public DateTime Date { get; set; }
-        public Guid User_Id { get; set; }
+        public Guid UserId { get; set; }
         public virtual User User { get; set; }
     }
 }
