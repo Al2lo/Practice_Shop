@@ -16,5 +16,12 @@ namespace PracticeShop.WebAPI
         {
             Database.EnsureCreated();   // создаем базу данных при первом обращении
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //DbContextConfiguration.ConfigureEntities(modelBuilder);
+            //DbContextConfiguration.SeedData(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
