@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddAPI()
-    .AddDAL()
+    .AddDAL(builder.Configuration)
     .AddBLL();
 
 var app = builder.Build();
