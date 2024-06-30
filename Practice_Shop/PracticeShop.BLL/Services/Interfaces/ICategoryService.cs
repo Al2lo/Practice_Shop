@@ -10,9 +10,10 @@ namespace PracticeShop.BLL.Services.Interfaces
 {
     public interface ICategoryService
     {
-        Task<IEnumerable<Category>> GetAllCategories();
-        Task AddCategory(CreateCategory model);
-        Task DeleteCategory(int id);
+        Task<IEnumerable<CategoryDTO>> GetAllCategoriesAsync();
+        Task AddCategoryAsync(CreateCategory model);
+        Task DeleteCategoryAsync(int id);
+        Task UpdateCategoryAsync(UpdateCategory model);
 
     }
 }
