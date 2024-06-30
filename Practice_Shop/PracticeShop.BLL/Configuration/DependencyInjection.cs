@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+using PracticeShop.BLL.DTOs.Category;
+using PracticeShop.BLL.Validation.Category;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,8 @@ namespace PracticeShop.BLL.Configuration
     {
         public static IServiceCollection AddBLL(this IServiceCollection services)
         {
+            services.AddScoped<IValidator<CreateCategory>, CreateCategoryValidator>();
+
             return services;
         }
     }
