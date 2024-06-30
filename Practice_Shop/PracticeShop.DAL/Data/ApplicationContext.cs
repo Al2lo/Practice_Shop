@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PracticeShop.DAL.Configurations;
 using PracticeShop.DAL.Entities;
-using System.Collections.Generic;
 
 namespace PracticeShop.WebAPI
 {
@@ -17,8 +17,7 @@ namespace PracticeShop.WebAPI
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //DbContextConfiguration.ConfigureEntities(modelBuilder);
-            //DbContextConfiguration.SeedData(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryConfiguration).Assembly);
             base.OnModelCreating(modelBuilder);
         }
     }
