@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
-    public class OrderRepository : GeneralRepository<Order>, IOrderRepository
+    public class OrderRepository : GeneralRepository<Order>, IOrderRepository<Order>
     {
         public OrderRepository(ApplicationContext dbContext) : base(dbContext) { }
     }
