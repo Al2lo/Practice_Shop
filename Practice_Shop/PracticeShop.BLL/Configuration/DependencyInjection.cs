@@ -10,6 +10,7 @@ namespace PracticeShop.BLL.Configuration
         public static IServiceCollection AddBLL(this IServiceCollection services)
         {
             services.AddScoped<IValidator<OrderItemDTO>, OrderItemDTOValidator>();
+            services.AddScoped<IValidator<ProductDTO>, ProductDTOValidator>();
 
             return services;
         }
