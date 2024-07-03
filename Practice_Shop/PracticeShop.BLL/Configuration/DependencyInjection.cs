@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PracticeShop.BLL.DTOs;
+using PracticeShop.BLL.DTOs.Order;
 using PracticeShop.BLL.DTOs.User;
 using PracticeShop.BLL.Validation;
 using PracticeShop.BLL.Validation.User;
@@ -20,6 +21,7 @@ namespace PracticeShop.BLL.Configuration
         {
             services.AddScoped<IValidator<CreateCategory>, CreateCategoryValidator>();
             services.AddScoped<IValidator<OrderItemDTO>, OrderItemDTOValidator>();
+            services.AddScoped<IValidator<OrderDTO>, OrderDTOValidator>();
             services.AddScoped<IValidator<UserDTO>, CreateUserValidator>();
             services.AddScoped<IValidator<UpdateUser>, UpdateUserValidator>();
 

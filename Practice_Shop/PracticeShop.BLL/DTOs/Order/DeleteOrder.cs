@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PracticeShop.BLL.DTOs.Order
 {
-    public class CreateOrder
+    public class DeleteOrder
     {
-        public Guid UserId { get; set; }
+        public int Id { get; set; }
     }
 }
