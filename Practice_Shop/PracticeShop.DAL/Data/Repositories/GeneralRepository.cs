@@ -1,10 +1,6 @@
 ﻿using PracticeShop.DAL.Data.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PracticeShop.WebAPI;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
@@ -31,7 +27,7 @@ namespace PracticeShop.DAL.Data.Repositories
 
         public async Task<IEnumerable<T>> GetAll()
         {
-            return await table.ToListAsync<T>();
+            return await table.AsNoTracking().ToListAsync<T>();
         }
 
         public async Task<T> GetById(int id)
