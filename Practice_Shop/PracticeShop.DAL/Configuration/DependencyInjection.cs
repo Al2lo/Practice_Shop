@@ -2,11 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PracticeShop.WebAPI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace PracticeShop.DAL.Configuration
 {
@@ -20,6 +16,13 @@ namespace PracticeShop.DAL.Configuration
             {
                 options.UseSqlServer(connectionString);
             });
+
+            return services;
+        }
+
+        public static IServiceCollection AddBLL(this IServiceCollection services)
+        {
+            services.AddScoped<IValidator<OrderDTO>, OrderDTOValidator>();
 
             return services;
         }
