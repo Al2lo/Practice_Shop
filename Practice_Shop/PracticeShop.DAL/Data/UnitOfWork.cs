@@ -13,11 +13,60 @@ namespace PracticeShop.DAL.Data
 {
     public class UnitOfWork
     {
-        CategoryRepository categoryRepository {  get; set; }
-        OrderItemRepository orderItemRepository { get; set; }
-        OrderRepository orderRepository { get; set; }
-        ProductRepository productRepository { get; set; }
-        UserRepository userRepository { get; set; }
+        private CategoryRepository categoryRepository;
+        private OrderItemRepository orderItemRepository;
+        private OrderRepository orderRepository;
+        private ProductRepository productRepository;
+        private UserRepository userRepository;
+
+        CategoryRepository CategoryRepository
+        {
+            get
+            {
+                if (categoryRepository == null)
+                    categoryRepository = new CategoryRepository(applicationContext);
+                return categoryRepository;
+            }
+        }
+            
+        OrderItemRepository OrderItemRepository { 
+            get 
+            {
+                if(orderItemRepository == null)
+                    orderItemRepository = new OrderItemRepository(applicationContext);
+                return orderItemRepository;
+            } 
+        }
+
+        OrderRepository OrderRepository
+        {
+            get
+            {
+                if(orderRepository == null)
+                    orderRepository = new OrderRepository(applicationContext);
+                return orderRepository;
+            }
+        }
+
+        ProductRepository ProductRepository
+        {
+            get
+            {
+                if(productRepository == null)
+                    productRepository = new ProductRepository(applicationContext);
+                return productRepository;
+            }
+        }
+
+        UserRepository UserRepository
+        {
+            get
+            {
+                if(userRepository == null)
+                    userRepository = new UserRepository(applicationContext);
+                return userRepository;
+            }
+        }
 
         ApplicationContext applicationContext { get; set; }
 
@@ -25,11 +74,6 @@ namespace PracticeShop.DAL.Data
         {
             applicationContext = context;
 
-            categoryRepository = new CategoryRepository (applicationContext);
-            orderItemRepository = new OrderItemRepository (applicationContext);
-            orderRepository = new OrderRepository (applicationContext);
-            productRepository = new ProductRepository (applicationContext);
-            userRepository = new UserRepository(applicationContext);
         }
     }
 }
