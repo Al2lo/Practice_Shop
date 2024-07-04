@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
-    internal class ProductRepository : GeneralRepository<Product>, IProductRepository<Product>
+    public class ProductRepository : GeneralRepository<Product>, IProductRepository<Product>
     {
         public ProductRepository(ApplicationContext dbContext) : base(dbContext)
         {
