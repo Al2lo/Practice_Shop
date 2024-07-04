@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
-    internal class ProductRepository : GeneralRepository<Product>, IProductRepository<Product>
+    public class ProductRepository : GeneralRepository<Product>, IProductRepository<Product>
     {
         public ProductRepository(ApplicationContext dbContext) : base(dbContext)
         {
@@ -19,6 +19,11 @@ namespace PracticeShop.DAL.Data.Repositories
         public Task<IEnumerable<Product>> GetByCategory(Category category)
         {
             return (Task<IEnumerable<Product>>)table.Where<Product>(prod => prod.Category.Id == category.Id);
+        }
+
+        public async Task<Product> GetById(Guid id)
+        {
+            return await table.FindAsync(id);
         }
     }
 }

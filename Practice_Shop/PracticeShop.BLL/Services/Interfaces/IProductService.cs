@@ -9,12 +9,12 @@ namespace PracticeShop.BLL.Services.Interfaces
 {
     internal interface IProductService
     {
-        Task<IEnumerable<ProductDTO>> GetAllProductsAsync();
-        Task<IEnumerable<ProductDTO>> GetProductsByCategoryAsync(int categoryId);
-        Task<ProductDTO> GetProductByIdAsync(int id);
-        Task AddProductAsync(ProductDTO productDTO);
-        Task DeleteProductAsync(int id);
-        Task UpdateProductAsync(UpdateProductDTO productDTO);
+        Task<IEnumerable<ProductDTO>> GetAllProductsAsync(CancellationToken cancellationToken);
+        Task<IEnumerable<ProductDTO>> GetProductsByCategoryAsync(int categoryId, CancellationToken cancellationToken);
+        Task<ProductDTO> GetProductByIdAsync(Guid id, CancellationToken cancellationToken);
+        Task AddProductAsync(ProductDTO productDTO, CancellationToken cancellationToken);
+        Task DeleteProductAsync(Guid id, CancellationToken cancellationToken);
+        Task UpdateProductAsync(UpdateProductDTO productDTO, CancellationToken cancellationToken);
 
     }
 }

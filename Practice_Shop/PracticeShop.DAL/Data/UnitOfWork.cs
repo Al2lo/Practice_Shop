@@ -19,7 +19,7 @@ namespace PracticeShop.DAL.Data
         private ProductRepository productRepository;
         private UserRepository userRepository;
 
-        CategoryRepository CategoryRepository
+        public CategoryRepository CategoryRepository
         {
             get
             {
@@ -29,7 +29,7 @@ namespace PracticeShop.DAL.Data
             }
         }
             
-        OrderItemRepository OrderItemRepository { 
+        public OrderItemRepository OrderItemRepository { 
             get 
             {
                 if(orderItemRepository == null)
@@ -38,7 +38,7 @@ namespace PracticeShop.DAL.Data
             } 
         }
 
-        OrderRepository OrderRepository
+        public OrderRepository OrderRepository
         {
             get
             {
@@ -48,7 +48,7 @@ namespace PracticeShop.DAL.Data
             }
         }
 
-        ProductRepository ProductRepository
+        public ProductRepository ProductRepository
         {
             get
             {
@@ -58,7 +58,7 @@ namespace PracticeShop.DAL.Data
             }
         }
 
-        UserRepository UserRepository
+        public UserRepository UserRepository
         {
             get
             {
