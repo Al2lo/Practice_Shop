@@ -19,12 +19,5 @@ namespace PracticeShop.DAL.Configuration
 
             return services;
         }
-
-        public static IServiceCollection AddBLL(this IServiceCollection services)
-        {
-            services.AddScoped<IValidator<OrderDTO>, OrderDTOValidator>();
-
-            return services;
-        }
     }
 }

@@ -29,7 +29,6 @@ namespace PracticeShop.BLL.Configuration
             services.AddScoped<IValidator<OrderDTO>, OrderDTOValidator>();
             services.AddScoped<IValidator<UserDTO>, CreateUserValidator>();
             services.AddScoped<IValidator<UpdateUser>, UpdateUserValidator>();
-
             return services;
         }
     }
