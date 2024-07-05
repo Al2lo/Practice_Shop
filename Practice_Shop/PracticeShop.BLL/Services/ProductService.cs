@@ -21,33 +21,35 @@ namespace PracticeShop.BLL.Services
 
         public async Task AddProductAsync(ProductDTO productDTO, CancellationToken cancellationToken)
         {
-            if (!cancellationToken.IsCancellationRequested)
+            
+            Product product = new Product()
             {
-                Product product = new Product()
-                {
-                    Name = productDTO.Name,
-                    Description = productDTO.Description,
-                    Cost = productDTO.Cost,
-                    CategoryId = productDTO.CategoryId
-                };
+                Name = productDTO.Name,
+                Description = productDTO.Description,
+                Cost = productDTO.Cost,
+                CategoryId = productDTO.CategoryId
+            };
 
-                await unitOfWork.ProductRepository.Add(product);
-            }
+            await unitOfWork.ProductRepository.Add(product);
+            
        
         }
 
         public async Task DeleteProductAsync(int id, CancellationToken cancellationToken)
         {
+          
             if (id != null)
             {
                 await unitOfWork.ProductRepository.Delete(new Product() { Id = id });
             }
             else
                 throw new Exception("");
+            
         }
 
         public async Task<IEnumerable<ProductDTO>> GetAllProductsAsync(CancellationToken cancellationToken)
         {
+
             var products = await unitOfWork.ProductRepository.GetAll();
             List<ProductDTO> result = new List<ProductDTO>();
             if (products != null)
@@ -111,6 +113,7 @@ namespace PracticeShop.BLL.Services
 
         public async Task UpdateProductAsync(UpdateProductDTO productDTO, CancellationToken cancellationToken)
         {
+
             var product = await unitOfWork.ProductRepository.GetById(productDTO.Id);
             if (product != null)
             {
@@ -124,6 +127,8 @@ namespace PracticeShop.BLL.Services
                 });
             }
             else throw new Exception("");
+
         }
+        
     }
 }
