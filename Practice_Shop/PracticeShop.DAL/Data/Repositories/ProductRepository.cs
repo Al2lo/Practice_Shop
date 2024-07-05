@@ -20,10 +20,5 @@ namespace PracticeShop.DAL.Data.Repositories
         {
             return (Task<IEnumerable<Product>>)table.Where<Product>(prod => prod.Category.Id == category.Id);
         }
-
-        public async Task<Product> GetById(Guid id)
-        {
-            return await table.FindAsync(id);
-        }
     }
 }

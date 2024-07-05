@@ -25,7 +25,6 @@ namespace PracticeShop.BLL.Services
             {
                 Product product = new Product()
                 {
-                    Id = Guid.NewGuid(),
                     Name = productDTO.Name,
                     Description = productDTO.Description,
                     Cost = productDTO.Cost,
@@ -37,7 +36,7 @@ namespace PracticeShop.BLL.Services
        
         }
 
-        public async Task DeleteProductAsync(Guid id, CancellationToken cancellationToken)
+        public async Task DeleteProductAsync(int id, CancellationToken cancellationToken)
         {
             if (id != null)
             {
@@ -70,7 +69,7 @@ namespace PracticeShop.BLL.Services
 
         }
 
-        public async Task<ProductDTO> GetProductByIdAsync(Guid id, CancellationToken cancellationToken)
+        public async Task<ProductDTO> GetProductByIdAsync(int id, CancellationToken cancellationToken)
         {
             var product = await unitOfWork.ProductRepository.GetById(id);
             ProductDTO result;
