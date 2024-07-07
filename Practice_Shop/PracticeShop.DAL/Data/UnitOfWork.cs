@@ -53,7 +53,7 @@ namespace PracticeShop.DAL.Data
         {
             get
             {
-                if(productRepository == null)
+                if (productRepository == null)
                     productRepository = new ProductRepository(applicationContext);
                 return productRepository;
             }

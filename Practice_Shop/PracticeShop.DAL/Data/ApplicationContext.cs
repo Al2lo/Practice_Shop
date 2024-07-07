@@ -2,7 +2,7 @@
 using PracticeShop.DAL.Configurations;
 using PracticeShop.DAL.Entities;
 
-namespace PracticeShop.WebAPI
+namespace PracticeShop.DAL.Data
 {
     public class ApplicationContext : DbContext
     {

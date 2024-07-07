@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using PracticeShop.BLL.DTOs.Category;
 using PracticeShop.BLL.Validation.Category;
@@ -9,7 +10,6 @@ using PracticeShop.BLL.Validation;
 using PracticeShop.BLL.Validation.Product;
 using PracticeShop.BLL.DTOs.Order;
 using PracticeShop.BLL.DTOs.User;
-using PracticeShop.BLL.Validation;
 using PracticeShop.BLL.Validation.User;
 using PracticeShop.BLL.Services.Interfaces;
 using PracticeShop.BLL.Services;
@@ -18,13 +18,13 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 
+
 namespace PracticeShop.BLL.Configuration
 {
     public static class DependencyInjection
     {
         public static IServiceCollection AddBLL(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
 
             services.AddScoped<IValidator<CreateCategory>, CreateCategoryValidator>();
             services.AddScoped<IValidator<OrderItemDTO>, OrderItemDTOValidator>();
@@ -59,6 +59,8 @@ namespace PracticeShop.BLL.Configuration
                         }
                     };
                 });
+
+            services.AddScoped<IHashService, HashService>();
 
             return services;
         }
