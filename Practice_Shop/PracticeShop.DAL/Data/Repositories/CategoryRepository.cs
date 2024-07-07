@@ -1,6 +1,6 @@
 ﻿using PracticeShop.DAL.Data.Repositories.Interfaces;
 using PracticeShop.DAL.Entities;
-using PracticeShop.WebAPI;
+using System.Data.Entity;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
@@ -8,7 +8,11 @@ namespace PracticeShop.DAL.Data.Repositories
     {
         public CategoryRepository(ApplicationContext dbContext) : base(dbContext)
         {
-            
+           
+        }
+        public async Task<Category> GetCategoryByName(string name)
+        {
+            return await table.FirstOrDefaultAsync(x => x.Name == name);
         }
     }
 }
