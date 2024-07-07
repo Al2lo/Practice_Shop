@@ -1,6 +1,5 @@
 ﻿using PracticeShop.DAL.Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using PracticeShop.WebAPI;
 
 namespace PracticeShop.DAL.Data.Repositories
 {
