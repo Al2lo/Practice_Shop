@@ -18,6 +18,5 @@ namespace PracticeShop.DAL.Configuration
 
             return services;
         }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PracticeShop.BLL.DTOs.Product;
 
+
 namespace PracticeShop.BLL.DTOs.Category
 {
     public class CategoryDTO
