@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PracticeShop.WebAPI;
 
-
 namespace PracticeShop.DAL.Configuration
 {
     public static class DependencyInjection
