@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using PracticeShop.DAL.Data.Repositories;
+using PracticeShop.DAL.Data.Repositories.Interfaces;
 using PracticeShop.DAL.Entities;
 using PracticeShop.WebAPI;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PracticeShop.DAL.Data
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private CategoryRepository categoryRepository;
         private OrderItemRepository orderItemRepository;
@@ -37,7 +38,7 @@ namespace PracticeShop.DAL.Data
                 return orderItemRepository;
             } 
         }
-            
+
         public OrderRepository OrderRepository
         {
             get

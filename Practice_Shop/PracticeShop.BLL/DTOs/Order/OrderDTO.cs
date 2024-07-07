@@ -1,9 +1,4 @@
-﻿using PracticeShop.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PracticeShop.BLL.DTOs.User;
 
 namespace PracticeShop.BLL.DTOs.Order
 {
@@ -11,6 +6,6 @@ namespace PracticeShop.BLL.DTOs.Order
     {
         public DateTime Date { get; set; }
         public Guid UserId { get; set; }
-        public virtual User User { get; set; }
+        public virtual UserDTO User { get; set; }
     }
 }

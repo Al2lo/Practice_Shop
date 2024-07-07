@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .AddAPI()
     .AddDAL(builder.Configuration)
-    .AddBLL();
+    .AddBLL(builder.Configuration);
 
 var app = builder.Build();
 
@@ -26,6 +26,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 
