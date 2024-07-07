@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticeShop.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace PracticeShop.DAL.Data.Repositories.Interfaces
 {
     public interface ICategoryRepository
     {
+        Task<Category> GetCategoryByName(string name);
     }
 }
